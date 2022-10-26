@@ -1,5 +1,23 @@
 def bubble_sort(arr)
-  # type your code in here
+  swaps = 0
+  first_index = 0
+  second_index = 1
+
+  while second_index < arr.size
+    first_element = arr[first_index]
+    second_element = arr[second_index]
+
+    if first_element > second_element
+      arr[first_index] = second_element
+      arr[second_index] = first_element
+      swaps += 1
+    end
+    first_index += 1
+    second_index += 1
+  end
+
+  return bubble_sort(arr) unless swaps == 0
+  arr
 end
 
 if __FILE__ == $PROGRAM_NAME
